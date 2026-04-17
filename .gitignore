@@ -1,3 +1,4 @@
-git add .gitignore
-git commit -m "add gitignore"
-git push
+/*
+!/.gitignore
+!/_itxp/
+!/_itxp/**
