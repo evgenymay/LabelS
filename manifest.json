@@ -4,24 +4,29 @@
   "version": "1.0.1",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
+  "homepage_url": "https://github.com/evgenymay/LabelS",
+  "icons": {
+    "48": "icons/labels.svg",
+    "96": "icons/labels.svg"
+  },
   "permissions": [
     "history",
     "contextMenus",
     "storage",
-    "tabs"
+    "activeTab"
   ],
   "host_permissions": [
     "https://favicon.categorization.dev/*",
-    "https://www.google.com/*",
-    "https://*.gstatic.com/*",
-    "https://suggestqueries.google.com/*",
-    "https://suggest.yandex.ru/*",
-    "https://yandex.ru/*",
-    "https://yandex.com/*"
+    "https://www.google.com/s2/favicons*",
+    "https://suggestqueries.google.com/complete/search*",
+    "https://yandex.com/suggest/*"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "__MSG_actionTitle__"
+    "default_title": "__MSG_actionTitle__",
+    "default_icon": {
+      "48": "icons/labels.svg"
+    }
   },
   "background": {
     "scripts": [
@@ -37,7 +42,8 @@
       "strict_min_version": "142.0",
       "data_collection_permissions": {
         "required": [
-          "none"
+          "browsingActivity",
+          "searchTerms"
         ],
         "optional": []
       }

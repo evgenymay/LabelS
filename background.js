@@ -61,13 +61,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   fetch(url)
     .then(r => r.text())
     .then(text => {
-      console.log('[LabelS suggest] raw:', text.slice(0, 200));
       const data = JSON.parse(text);
       const suggestions = Array.isArray(data[1]) ? data[1].slice(0, 8) : [];
       sendResponse({ suggestions });
     })
-    .catch(err => {
-      console.error('[LabelS suggest] error:', err);
+    .catch(() => {
       sendResponse({ suggestions: [] });
     });
 

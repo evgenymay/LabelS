@@ -307,7 +307,7 @@ let _maxLabels = 999;
 let _maxCols = 24;
 let _noSpaceTimer = null;
 let _noticeTimer = null;
-const DEBUG_LAYOUT = true;
+const DEBUG_LAYOUT = false;
 const INTERNAL_DRAG_TYPE = 'application/x-labels-internal-drag';
 
 function debugLog(label, payload) {
