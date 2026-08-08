@@ -1,0 +1,18 @@
+# Артефакты сборки/подписи расширения
+*.xpi
+*.zip
+web-ext-artifacts/
+
+# Ключи и секреты AMO (никогда не коммитить)
+.env
+.env.*
+*.pem
+
+# Локальные настройки инструментов
+.claude/settings.local.json
+
+# Системное
+node_modules/
+Thumbs.db
+desktop.ini
+.DS_Store

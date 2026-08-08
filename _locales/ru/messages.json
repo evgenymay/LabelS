@@ -1,0 +1,76 @@
+{
+  "extensionName": { "message": "LabelS" },
+  "extensionDescription": { "message": "Персонализация новых вкладок в браузере" },
+  "actionTitle": { "message": "Добавить в метки" },
+  "contextMenuRemoveLabel": { "message": "Убрать метку с экрана" },
+
+  "popupLoading": { "message": "Загрузка…" },
+  "popupAddStarLabels": { "message": "★ Добавить в метки" },
+  "popupAlreadyAdded": { "message": "уже добавлено" },
+  "popupAdded": { "message": "✓ Добавлено" },
+  "popupErrNoPage": { "message": "Не удалось получить страницу" },
+  "popupErrSystemPage": { "message": "Системная страница" },
+  "popupErrBadUrl": { "message": "Неверный URL" },
+
+  "pageTitle": { "message": "Новая вкладка" },
+  "settingsTitle": { "message": "Настройки" },
+  "settingDays": { "message": "учитывать дней" },
+  "settingLabelCount": { "message": "количество меток" },
+  "settingIconWidth": { "message": "ширина меток (%)" },
+  "settingCols": { "message": "меток в ряду" },
+  "settingUiLanguage": { "message": "Язык" },
+  "profileDefaultOption": { "message": "По умолчанию" },
+  "profileNameTitle": { "message": "Имя профиля" },
+  "ctxRename": { "message": "Переименовать" },
+  "ctxExport": { "message": "Экспорт" },
+  "ctxImport": { "message": "Импорт" },
+  "ctxDelete": { "message": "Удалить" },
+  "ctxConfirmDelete": { "message": "Удалить профиль?" },
+  "ctxYes": { "message": "Да" },
+  "ctxNo": { "message": "Нет" },
+
+  "searchPlaceholderGoogle": { "message": "Поиск в Google…" },
+  "searchPlaceholderYandex": { "message": "Поиск в Яндексе…" },
+
+  "noSpaceOnScreen": { "message": "🚫 Нет места на экране" },
+  "noticeDuplicateSite": { "message": "Этот сайт уже есть на вкладке" },
+
+  "profileAutoSaved": { "message": "Авто-сохранённый" },
+  "profileNameDialogTitle": { "message": "Имя профиля" },
+  "profileDuplicateTitle": {
+    "message": "Такой профиль уже есть: $NAME$",
+    "placeholders": {
+      "name": { "content": "$1", "example": "Работа" }
+    }
+  },
+  "btnDelete": { "message": "Удалить" },
+  "profileDefault": { "message": "По умолчанию" },
+  "profileRenameTitle": { "message": "Переименовать" },
+
+  "importErrBadFormat": { "message": "Ошибка: неверный формат файла" },
+  "importErrMissingSyncLocal": { "message": "Ошибка: файл не содержит данных local/sync" },
+  "fallbackImportProfileName": { "message": "Профиль" },
+
+  "quotaAlertTitle": { "message": "Мало места" },
+  "quotaLineTotal": {
+    "message": "Всего: $SIZE$ KB",
+    "placeholders": { "size": { "content": "$1", "example": "100.0" } }
+  },
+  "quotaLineUsed": {
+    "message": "Занято: $SIZE$ KB",
+    "placeholders": { "size": { "content": "$1", "example": "90.0" } }
+  },
+  "quotaLineFree": {
+    "message": "Свободно: $SIZE$ KB",
+    "placeholders": { "size": { "content": "$1", "example": "10.0" } }
+  },
+  "quotaLineProfile": {
+    "message": "Профиль: $SIZE$ KB",
+    "placeholders": { "size": { "content": "$1", "example": "5.0" } }
+  },
+
+  "emptyLabelsHint": { "message": "Нажмите По умолчанию чтобы загрузить метки из истории." },
+  "tableShow": { "message": "показать" },
+  "tableDomain": { "message": "Домен" },
+  "tableVisits": { "message": "Визиты" }
+}

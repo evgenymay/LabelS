@@ -1,0 +1,76 @@
+{
+  "extensionName": { "message": "LabelS" },
+  "extensionDescription": { "message": "Personalize your new tab page with labeled shortcuts from history." },
+  "actionTitle": { "message": "Add to labels" },
+  "contextMenuRemoveLabel": { "message": "Remove label from screen" },
+
+  "popupLoading": { "message": "Loading…" },
+  "popupAddStarLabels": { "message": "★ Add to labels" },
+  "popupAlreadyAdded": { "message": "Already added" },
+  "popupAdded": { "message": "✓ Added" },
+  "popupErrNoPage": { "message": "Could not load page" },
+  "popupErrSystemPage": { "message": "System page" },
+  "popupErrBadUrl": { "message": "Invalid URL" },
+
+  "pageTitle": { "message": "New tab" },
+  "settingsTitle": { "message": "Settings" },
+  "settingDays": { "message": "Days of history" },
+  "settingLabelCount": { "message": "Number of labels" },
+  "settingIconWidth": { "message": "Label width (%)" },
+  "settingCols": { "message": "Labels per row" },
+  "settingUiLanguage": { "message": "Language" },
+  "profileDefaultOption": { "message": "Default" },
+  "profileNameTitle": { "message": "Profile name" },
+  "ctxRename": { "message": "Rename" },
+  "ctxExport": { "message": "Export" },
+  "ctxImport": { "message": "Import" },
+  "ctxDelete": { "message": "Delete" },
+  "ctxConfirmDelete": { "message": "Delete profile?" },
+  "ctxYes": { "message": "Yes" },
+  "ctxNo": { "message": "No" },
+
+  "searchPlaceholderGoogle": { "message": "Search Google…" },
+  "searchPlaceholderYandex": { "message": "Search Yandex…" },
+
+  "noSpaceOnScreen": { "message": "🚫 Not enough space on screen" },
+  "noticeDuplicateSite": { "message": "This site is already on the tab" },
+
+  "profileAutoSaved": { "message": "Auto-saved" },
+  "profileNameDialogTitle": { "message": "Profile name" },
+  "profileDuplicateTitle": {
+    "message": "A profile like this already exists: $NAME$",
+    "placeholders": {
+      "name": { "content": "$1", "example": "Work" }
+    }
+  },
+  "btnDelete": { "message": "Delete" },
+  "profileDefault": { "message": "Default" },
+  "profileRenameTitle": { "message": "Rename" },
+
+  "importErrBadFormat": { "message": "Error: invalid file format" },
+  "importErrMissingSyncLocal": { "message": "Error: file must contain local and sync sections" },
+  "fallbackImportProfileName": { "message": "Profile" },
+
+  "quotaAlertTitle": { "message": "Storage quota low" },
+  "quotaLineTotal": {
+    "message": "Total: $SIZE$ KB",
+    "placeholders": { "size": { "content": "$1", "example": "100.0" } }
+  },
+  "quotaLineUsed": {
+    "message": "Used: $SIZE$ KB",
+    "placeholders": { "size": { "content": "$1", "example": "90.0" } }
+  },
+  "quotaLineFree": {
+    "message": "Free: $SIZE$ KB",
+    "placeholders": { "size": { "content": "$1", "example": "10.0" } }
+  },
+  "quotaLineProfile": {
+    "message": "Profile: $SIZE$ KB",
+    "placeholders": { "size": { "content": "$1", "example": "5.0" } }
+  },
+
+  "emptyLabelsHint": { "message": "Choose Default to load labels from history." },
+  "tableShow": { "message": "show" },
+  "tableDomain": { "message": "Domain" },
+  "tableVisits": { "message": "Visits" }
+}
