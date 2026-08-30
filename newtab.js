@@ -2384,8 +2384,43 @@ function fetchSuggestions(query) {
   const engine = searchEngineSelect.value || 'google';
   chrome.runtime.sendMessage({ type: 'suggest', query, engine }, (response) => {
     if (chrome.runtime.lastError || !response) return;
+    if (response.needsPermission) {
+      showPermissionPrompt(response.origin, query);
+      return;
+    }
     showSuggestions(response.suggestions);
   });
+}
+
+function showPermissionPrompt(origin, query) {
+  currentSuggestions = [];
+  activeIndex = -1;
+  suggestionsBox.replaceChildren();
+
+  const host = String(origin).split('://').pop().split('/')[0];
+
+  const row = document.createElement('div');
+  row.className = 'suggestion-permission';
+
+  const title = document.createElement('div');
+  title.className = 'suggestion-permission-title';
+  title.textContent = __('suggestPermissionTitle');
+
+  const hint = document.createElement('div');
+  hint.className = 'suggestion-permission-hint';
+  hint.textContent = __('suggestPermissionHint', [host]);
+
+  row.append(title, hint);
+  row.addEventListener('click', () => {
+    chrome.permissions.request({ origins: [origin] }, (granted) => {
+      if (chrome.runtime.lastError || !granted) { hideSuggestions(); return; }
+      fetchSuggestions(query);
+    });
+  });
+
+  suggestionsBox.appendChild(row);
+  suggestionsBox.classList.add('visible');
+  searchInput.classList.add('has-suggestions');
 }
 
 function showSuggestions(suggestions) {

@@ -34,6 +34,17 @@ if (chrome.contextMenus) {
   });
 }
 
+const SUGGEST_ORIGINS = {
+  google: 'https://suggestqueries.google.com/complete/search*',
+  yandex: 'https://yandex.com/suggest/*'
+};
+
+function suggestUrl(engine, query) {
+  return engine === 'yandex'
+    ? `https://yandex.com/suggest/suggest-ff.cgi?part=${encodeURIComponent(query)}&uil=ru`
+    : `https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}`;
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'addDomain' && message.domain) {
     const domain = message.domain;
@@ -53,21 +64,26 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true;
   }
 
-  const engine = message.engine || 'google';
-  const url = engine === 'yandex'
-    ? `https://yandex.com/suggest/suggest-ff.cgi?part=${encodeURIComponent(query)}&uil=ru`
-    : `https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}`;
+  const engine = message.engine === 'yandex' ? 'yandex' : 'google';
+  const origin = SUGGEST_ORIGINS[engine];
 
-  fetch(url)
-    .then(r => r.text())
-    .then(text => {
-      const data = JSON.parse(text);
-      const suggestions = Array.isArray(data[1]) ? data[1].slice(0, 8) : [];
-      sendResponse({ suggestions });
-    })
-    .catch(() => {
-      sendResponse({ suggestions: [] });
-    });
+  chrome.permissions.contains({ origins: [origin] }, (granted) => {
+    if (!granted) {
+      sendResponse({ suggestions: [], needsPermission: true, origin });
+      return;
+    }
+
+    fetch(suggestUrl(engine, query))
+      .then(r => r.text())
+      .then(text => {
+        const data = JSON.parse(text);
+        const suggestions = Array.isArray(data[1]) ? data[1].slice(0, 8) : [];
+        sendResponse({ suggestions });
+      })
+      .catch(() => {
+        sendResponse({ suggestions: [] });
+      });
+  });
 
   return true;
 });
