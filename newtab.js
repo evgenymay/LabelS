@@ -1806,7 +1806,7 @@ function renderList(domains) {
                 domainsPersisted: snapshotDomains(latestDomains)
               });
               if (!manualLayout) {
-                scanHistory(true, true);
+                scanHistory(false, true);
               } else {
                 renderList(latestDomains);
                 renderGrid();
@@ -1857,7 +1857,7 @@ function hideDomainFromGrid(domainToHide, onComplete) {
       setStoredSettings(cfg, () => {
         setStoredSavedDomains(latestDomains, () => {
           if (!manualLayout) {
-            scanHistory(true, true);
+            scanHistory(false, true);
           } else {
             renderList(latestDomains);
             renderGrid();
